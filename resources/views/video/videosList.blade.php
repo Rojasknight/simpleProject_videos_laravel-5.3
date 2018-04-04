@@ -22,7 +22,11 @@
                                 {{$video->title}}
                             </a>
                         </h4>
-                        <p>{{$video->user->name . ' - ' . $video->user->surname}}</p>
+                        <p>
+                            <a href=" {{url('/canal/' . $video->user->id)}}">{{$video->user->name . " " . $video->user->surname}}
+                            </a>
+                            {{ ' | ' . \FormatTime::LongTimeFilter($video->created_at) }}
+                        </p>
 
 
                     </div>
